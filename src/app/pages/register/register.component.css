@@ -1,0 +1,11 @@
+#formContainer {
+    width: 100%;
+}
+
+#formRegister {
+    width: 50%;
+    margin: auto;
+}
+.form-row{
+    padding-bottom: 10px;
+}

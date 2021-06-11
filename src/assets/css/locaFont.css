@@ -1,4 +1,9 @@
 @font-face {
-    font-family: NotoSansLaoRegular;
+    font-family: "NotoSansLaoRegular";
     src: url(../fonts/NotoSansLao-Regular.ttf);
+}
+
+@font-face {
+    font-family: "PhetsarathOT";
+    src: url(../fonts/Phetsarath-OT.ttf);
 }

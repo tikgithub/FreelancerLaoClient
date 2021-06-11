@@ -6,4 +6,5 @@ export class Register {
     tel: string = "";
     email: string = "";
     address: string = "";
+    password: string = "";
 }

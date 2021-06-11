@@ -1,0 +1,33 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="form-container">
+                <h2 class="text-center title-text">Welcome Login System</h2>
+                <img class=" mx-auto d-block logo" src="https://image.freepik.com/free-psd/engraved-black-logo-mockup_125540-223.jpg" alt="" width="100" height="auto">
+                <form autocomplete="off" class="text-center" [formGroup]="loginForm">
+                  <p style="font-family: NotoSansLaoRegular;">ທົດສອບ Noto SANS ພາສາລາວຍັງບໍ່ດີສຳລັບ ລະບົບ Windows</p>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Enter your email here" formControlName="email">
+                                <mat-icon matSuffix>account_circle</mat-icon>
+                              
+                            </mat-form-field>
+                       
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput placeholder="Enter your secert password" formControlName="password">
+                                <mat-icon matSuffix>vpn_key</mat-icon>
+                           </mat-form-field>
+
+                           <button id="loginButton" class="btn btn-success">Log in</button>
+                </form>
+                <br>
+                <div class="text-center">
+                    <p>Don't have an account ? <a href="http://">Sign Up Here</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

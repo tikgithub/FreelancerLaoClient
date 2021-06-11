@@ -1,51 +1,95 @@
-<h3 class="text-center p-2">Register</h3>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+<div class="container">
 
-<div id="formContainer">
-   <form id="formRegister" [formGroup]="registerForm">
-       <div class="form-row">
-            <div class="form-group col-12">
-                <label for="firstname">Firstname</label>
-                <input type="text" id="firstname"  class="form-control" formControlName="firstname">
+    <h2 class="text-center p-2">Register</h2>
+
+    <div id="formContainer">
+        <form id="formRegister" [formGroup]="registerForm" autocomplete="off">
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="firstname">Firstname</label>
+                    <input type="text" id="firstname" class="form-control" formControlName="firstname"
+                        [ngClass]="{'is-invalid': submited && f.firstname.errors}">
+                    <div *ngIf="submited && f.firstname.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstname.errors.required">Firstname is required</div>
+                    </div>
+                </div>
             </div>
-       </div>
-       <div class="form-row">
-           <div class="form-group col-12">
-               <label for="lastname">Lastname</label>
-               <input type="text" id="lastname" class="form-control" formControlName='lastname'>
-           </div>
-       </div>
-       <div class="form-row">
-           <div class="form-group col-12">
-               <label for="sex">Gender</label>
-               <select class="form-control" id="sex" formControlName="sex">
-                   <option>Sex...</option>
-                   <option *ngFor="let g of genders" value="{{g.id}}">{{g.gender}}</option>
-               </select>
-           </div>
-       </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" id="lastname" class="form-control" formControlName='lastname'
+                        [ngClass]="{'is-invalid': submited && f.lastname.errors}">
+                    <div *ngIf="submited && f.lastname.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastname.errors.required">
+                            Lastname is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="sex">Gender</label>
+                    <select class="form-control" id="sex" formControlName="sex"
+                        [ngClass]="{'is-invalid': submited && f.sex.errors}">
+                        <option value="" selected="selected">Sex...</option>
+                        <option *ngFor="let g of genders" value="{{g.id}}">{{g.gender}}</option>
+                    </select>
+                    <div *ngIf="submited && f.sex.errors" class="invalid-feedback">
+                        <div *ngIf="f.sex.errors.required">
+                            Gender required to select
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-       <div class="form-row">
-           <div class="form-group col-12">
-               <label for="tel">Telephone</label>
-               <input type="tel" placeholder="+85620xxxxxxxx" class="form-control" id="tel" formControlName="tel">
-           </div>
-       </div>
-       <div class="form-row">
-           <div class="form-group col-12">
-               <label for="email">Email</label>
-               <input type="email" id="email" class="form-control" placeholder="ex@email.com" formControlName="email">
-           </div>
-       </div>
-       <div class="form-row">
-           <div class="form-group col-12">
-               <label for="address">Address</label>
-               <textarea id="address" rows="7" class="form-control" formControlName="address"></textarea>
-           </div>
-       </div>
-       <div class="form-row">
-           <div class="form-group col-12 text-center">
-               <a class="btn btn-outline-success" (click)="onSubmit()">Register</a>
-           </div>
-       </div>
-   </form>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="tel">Telephone</label>
+                    <input type="tel" placeholder="+85620xxxxxxxx" class="form-control" id="tel" formControlName="tel"
+                        [ngClass]="{'is-invalid' : submited && f.tel.errors}">
+                    <div *ngIf="submited && f.tel.errors" class="invalid-feedback">
+                        <div *ngIf="f.tel.errors.required">
+                            Telephone number is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="ex@email.com"
+                        formControlName="email" [ngClass]="{'is-invalid' : submited && f.email.errors}">
+                    <div *ngIf="submited && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">
+                            Email is required to register
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control text-center" formControlName="password">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="address">Address</label>
+                    <textarea id="address" rows="7" class="form-control" formControlName="address"
+                        [ngClass]="{'is-invalid': submited && f.address.errors}"></textarea>
+                    <div *ngIf="submited && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">
+                            Please fill your current address
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12 text-center">
+                    <a class="btn btn-outline-success" (click)="onSubmit()">Register</a>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

@@ -15,8 +15,7 @@
     0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-;
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
 .logo{
     margin-bottom: 10pt;
@@ -28,23 +27,20 @@
     font-weight: bold;
     padding-bottom: 10pt;
 }
-.mat-form-field {
-    width: 100%;
-    font-size: 12pt;
-    font-weight: bold;
-    margin-bottom: -1.25em;
+input {
+    font-size: 10pt;
+    text-align: center;
 }
-.mat-icon {
-    font-size: 18pt;
+
+.form-group{
+    padding-bottom: 3px;
 }
 
 #loginButton {
-   margin: auto;
    width: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 18pt;
+   margin: auto;
+    font-size: 10pt;
     font-weight: bold;
-    margin-top: 20pt;
+    margin-top: 10pt;
     border-radius: 20px;
 }

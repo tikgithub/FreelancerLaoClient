@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { isUserLogin } from 'src/app/utils/objectUtil';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenService: AuthenticationService) {
+  }
 
   ngOnInit(): void {
+    console.log('change time')
+  }
+
+  logOut() {
+    this.authenService.logout();
+  }
+  ngOnChanges(){
+    console.log('change time');
+  }
+  triggerFunction() {
+    
   }
 
 }

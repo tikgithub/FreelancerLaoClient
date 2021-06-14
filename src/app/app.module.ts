@@ -7,7 +7,7 @@ import { DefaultComponent } from './layout/default/default.component';
 import { HeaderComponent } from './widget/header/header.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ToastrModule } from 'ngx-toastr';
@@ -16,13 +16,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { HomeComponent } from './pages/home/home.component';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
+import { JwtInterceptorService } from './services/jwt-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
     DefaultComponent,
     HeaderComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatButtonModule
   ],
-  providers: [],
+  providers:
+    [
+      { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
+      { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

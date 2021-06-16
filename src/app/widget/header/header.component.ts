@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { isUserLogin } from 'src/app/utils/objectUtil';
 
@@ -9,21 +10,27 @@ import { isUserLogin } from 'src/app/utils/objectUtil';
 })
 export class HeaderComponent implements OnInit {
 
+  isLoggedIn$!: Observable<boolean>;
   constructor(private authenService: AuthenticationService) {
+    this.isLoggedIn$ = this.authenService.isLoggedIn;
   }
 
-  ngOnInit(): void {
-    console.log('change time')
+   ngOnInit() {
+    this.isLoggedIn$.subscribe(value=>{
+      console.log(value);
+    })
   }
 
+  isLogin = ()=>{
+    return new Promise(resovled=>{
+      
+    })
+  }
+
+  
   logOut() {
     this.authenService.logout();
   }
-  ngOnChanges(){
-    console.log('change time');
-  }
-  triggerFunction() {
-    
-  }
+
 
 }

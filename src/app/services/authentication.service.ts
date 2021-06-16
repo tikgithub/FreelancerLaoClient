@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Config } from '../models/Config.model';
 import { UserAuth } from '../models/UserAuth.model'
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,11 @@ import { map } from 'rxjs/operators';
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<any> | undefined;
   public currentUser: Observable<any> | undefined;
+  //Check Login status
+  private loggedIn = new BehaviorSubject<boolean>(false);
+  //private loggedIn: Observable<>a
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();
    }
@@ -26,14 +30,24 @@ export class AuthenticationService {
         .pipe(map(user=>{
           localStorage.setItem('currentUser',JSON.stringify(user));
           this.currentUserSubject?.next(user);
+          this.loggedIn.next(true);
           return(user);
         }));
+   }
+
+   get isLoggedIn(){
+     return this.loggedIn.asObservable();
+   }
+
+   loggIn() {
+    this.loggedIn.next(false);
    }
    
    logout(){
      localStorage.removeItem('currentUser');
      this.currentUserSubject?.next(null);
-     window.location.reload(true)
+     this.loggedIn.next(false);
+     this.router.navigate(['/login']);
    }
 
 }

@@ -83,7 +83,7 @@ export class LoginComponent implements OnInit {
 
       this.isSubmited = false;
       this.isLoading=false;
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     } catch (error) {
       this.isSubmited = false;
       this.isLoading = false;

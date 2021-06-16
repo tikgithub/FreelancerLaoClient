@@ -15,7 +15,7 @@ export class ErrorInterceptorService implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((err): Observable<any> => {
         console.log(err);
-        if (err.status == 401 || err == 403) {
+        if (err.status == 401 || err.status == 403) {
           this.authenService.logout();
           window.location.reload(true);
         }

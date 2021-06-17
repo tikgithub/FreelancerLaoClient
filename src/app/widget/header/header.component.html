@@ -10,10 +10,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" routerLink="/home">Home</a>
+            <a class="nav-link " aria-current="page" routerLink="">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="#">Post a Job</a>
+            <a class="nav-link " *ngIf="loggined==true" routerLink='/postajob'>Post a Job</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link ">About Us</a>
@@ -22,15 +22,14 @@
         </ul>
   
         <ul class="navbar-nav">
-          <li *ngIf="isLoggedIn$ | async" class="nav-item"><a  class="nav-link"><span class="	fa fa-info-circle"></span> Help</a></li>
+          <li class="nav-item"><a  class="nav-link"><span class="	fa fa-info-circle"></span> Help</a></li>
           |
-          <li *ngIf="(isLoggedIn$ | async)==false"  class="nav-item"><a routerLink="register" class="nav-link"><span class="fa fa-plus-square"></span> Register</a></li>
+          <li *ngIf="loggined==false"  class="nav-item"><a routerLink="register" class="nav-link"><span class="fa fa-plus-square"></span> Register</a></li>
           |
-          <li *ngIf="(isLoggedIn$ | async)==false" class="nav-item"><a routerLink="login" class="nav-link"><span class="	fa fa-sign-in"></span> Login</a></li>
-          <li *ngIf="(isLoggedIn$ | async)==true" class="nav-item"><a  style="cursor: pointer;" (click)="logOut()" class="nav-link"><span class="	fa fa-sign-in"></span> Logout</a></li>
+          <li *ngIf="loggined==false" class="nav-item"><a routerLink="login" class="nav-link"><span class="	fa fa-sign-in"></span> Login</a></li>
+          <li *ngIf="loggined==true" class="nav-item"><a  style="cursor: pointer;" (click)="logOut()" class="nav-link"><span class="	fa fa-sign-in"></span> Logout</a></li>
         </ul>
   
       </div>
     </div>
   </nav>
-  {{isLoggedIn$ | async}}

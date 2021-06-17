@@ -11,14 +11,14 @@ import { isUserLogin } from 'src/app/utils/objectUtil';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn$!: Observable<boolean>;
+  loggined: boolean = false;
+
   constructor(private authenService: AuthenticationService) {
     this.isLoggedIn$ = this.authenService.isLoggedIn;
   }
 
    ngOnInit() {
-    this.isLoggedIn$.subscribe(value=>{
-      console.log(value);
-    })
+   this.getCurrntUser();
   }
 
   isLogin = ()=>{
@@ -29,7 +29,16 @@ export class HeaderComponent implements OnInit {
 
   
   logOut() {
+
     this.authenService.logout();
+    this.loggined=false;
+
+  }
+
+  getCurrntUser(){
+    this.authenService.currentUser$.subscribe(user=>{
+      this.loggined = !!user;
+    })
   }
 
 

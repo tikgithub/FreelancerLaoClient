@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserAuth } from 'src/app/models/UserAuth.model';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { HeaderComponent } from 'src/app/widget/header/header.component';
 
@@ -17,5 +18,4 @@ export class DefaultComponent implements OnInit {
   ngOnInit(): void {
     this.islogin = this.authService.currentUserValue;
   }
-
 }

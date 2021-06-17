@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { JwtInterceptorService } from './services/jwt-interceptor.service';
+import { PostajobComponent } from './pages/postajob/postajob.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { JwtInterceptorService } from './services/jwt-interceptor.service';
     HeaderComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    PostajobComponent
   ],
   imports: [
     BrowserModule,

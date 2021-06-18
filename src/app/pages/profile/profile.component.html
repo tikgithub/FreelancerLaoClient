@@ -1,19 +1,31 @@
-<div class="container">
-    <div class="container-cover">
-        <img id="profile-banner" src="assets/images/bg_banner.jpg" width="100%" height="auto" class="img-fluid">
-        <img id="btn" src="assets/images/user.jpeg" class="img-fluid">
-    </div>
-
-    <div class="row" style="margin-left: 0px; margin-right: 0px;" id="detail-container">
-        <div class="col" id="detail">
+<div class="container p-3">
+    <div class="card">
+        <h5 class="card-header text-white" style="background-color: #3489eb; font-size: 15pt; font-weight: bold;">User Profile</h5>
+        <div class="card-body">
             <div class="row">
-                <div class="col">
-                    <span id="fullname">{{user.user.firstname + ' ' + user.user.lastname}}</span><br><br>
-                    <span id="">ໂທ: {{user.user.tel}}, ອີເມວ: {{user.user.email}}</span><br>
-                    <span id="">ທີ່ຢູ່: {{user.user.address}}</span><br>
+                <div class="col-3 text-center">
+                    <img id="profile-photo" class="image-fluid" src="assets/images/user.jpeg" width="200" height="auto"><br>
+                    <button mat-raised-button id="btnChangePic">ປ່ຽນຮູບ <mat-icon>photo_camera_front</mat-icon></button>
+                </div>
+                <div class="col-9">
+                    <p style="font-size: 15pt; font-weight: bold;">ຂໍ້ມູນຜູ້ໃຊ້</p>
+                    <hr>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="firstname">ຊື່</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="lastname">ນາມສະກຸນ</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-
+      </div>
 </div>

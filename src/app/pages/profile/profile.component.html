@@ -23,6 +23,40 @@
                                 <input type="text" class="form-control">
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-2">
+                                <label for="sex">ເພດ</label>
+                                <select class="form-control">
+                                    <option *ngFor="let g of genderData" value="{{g.id}}">{{g.gender}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="tel">ເບີໂທ</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="email">ອີເມວ</label>
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="address">ທີ່ຢູ່</label>
+                                <textarea  id="" rows="5" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-12 text-center">
+                                <br>
+                                <button style="padding-left: 30px; padding-right: 30px;" mat-raised-button color="primary">ບັນທຶກ</button>
+                            </div>
+                        </div>
+                       
                     </form>
                 </div>
             </div>

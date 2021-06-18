@@ -24,7 +24,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { HelpComponent } from './pages/help/help.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { ProfileComponent } from './pages/profile/profile.component';
-import {MatDividerModule} from '@angular/material/divider'
+import {MatDividerModule} from '@angular/material/divider';
+import { ChangepasswordComponent } from './pages/changepassword/changepassword.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatDividerModule} from '@angular/material/divider'
     PostajobComponent,
     AboutusComponent,
     HelpComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,

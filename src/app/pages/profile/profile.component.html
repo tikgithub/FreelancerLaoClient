@@ -1,1 +1,19 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="container-cover">
+        <img id="profile-banner" src="assets/images/bg_banner.jpg" width="100%" height="auto" class="img-fluid">
+        <img id="btn" src="assets/images/user.jpeg" class="img-fluid">
+    </div>
+
+    <div class="row" style="margin-left: 0px; margin-right: 0px;" id="detail-container">
+        <div class="col" id="detail">
+            <div class="row">
+                <div class="col">
+                    <span id="fullname">{{user.user.firstname + ' ' + user.user.lastname}}</span><br><br>
+                    <span id="">ໂທ: {{user.user.tel}}, ອີເມວ: {{user.user.email}}</span><br>
+                    <span id="">ທີ່ຢູ່: {{user.user.address}}</span><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

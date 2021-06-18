@@ -3,4 +3,5 @@ export class UserAuth {
     firstname: string = "";
     lastname: string= "";
     token: string = "";
+    tel: string = "";
 }

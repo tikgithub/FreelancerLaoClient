@@ -28,20 +28,6 @@ export class AuthGuardService implements CanActivate {
     this.authenService.loggIn();
     this.router.navigate(['/login'], { queryParams: { returnURL: state.url } });
     return false;
-
-    // return this.authenService.isLoggedIn.pipe(
-    //   take(1),
-    //   map((isLoggedIn: boolean)=>{
-    //     console.log(isLoggedIn, isNullOrEmptyJson(currentUser)!=1);
-
-    //     if(!isLoggedIn && isNullOrEmptyJson(currentUser)!=1){
-    //       this.router.navigate(['/login'],{queryParams: {returnURL: state.url}});
-    //       return false;
-    //     }
-
-    //     return true;
-    //   })
-    // );
   }
 
 

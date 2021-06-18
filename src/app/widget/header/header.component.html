@@ -1,8 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div style="background-color: #03438a; padding-bottom: 5px;">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3489eb">
 
     <div class="container-fluid">
       <a class="navbar-brand" href="#">FL</a>
-      <a class="navbar-brand" href="#">FreeLancerLao</a>
+      <a class="navbar-brand" href="#">ຟຣີແລນ</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,26 +11,59 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" routerLink="">Home</a>
+            <a class="nav-link active " aria-current="page" routerLink="">ໜ້າຫຼັກ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " *ngIf="loggined==true" routerLink='/postajob'>Post a Job</a>
+            <a class="nav-link active" *ngIf="loggined==true" routerLink='/postajob'>ປະກາດວຽກ</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link ">About Us</a>
+            <a routerLink="/aboutus" class="nav-link active">ກ່ຽວກັບ</a>
           </li>
   
         </ul>
-  
         <ul class="navbar-nav">
-          <li class="nav-item"><a  class="nav-link"><span class="	fa fa-info-circle"></span> Help</a></li>
-          |
-          <li *ngIf="loggined==false"  class="nav-item"><a routerLink="register" class="nav-link"><span class="fa fa-plus-square"></span> Register</a></li>
-          |
-          <li *ngIf="loggined==false" class="nav-item"><a routerLink="login" class="nav-link"><span class="	fa fa-sign-in"></span> Login</a></li>
-          <li *ngIf="loggined==true" class="nav-item"><a  style="cursor: pointer;" (click)="logOut()" class="nav-link"><span class="	fa fa-sign-in"></span> Logout</a></li>
+          <li class="nav-item "><a class="nav-link active" routerLink="help"><span class="	fa fa-info-circle"></span> ຊ່ວຍເຫຼືອ ແລະ ຂໍ້ມູນອື່ນໆ</a>
+          </li>
         </ul>
   
+        <ul class="navbar-nav" *ngIf="loggined==true">
+          <li class="nav-item">
+            <a href="" class="nav-link ">
+              <img src="assets/images/user.jpeg" id="profile-pic">
+            </a>
+          </li>
+        </ul>
+  
+        <ul class="navbar-nav ">
+  
+  
+          <li *ngIf="loggined==false" class="nav-item "><a routerLink="register" class="nav-link active"><span
+                class="fa fa-plus-square"></span> ລົງທະບຽນ</a></li>
+          <li *ngIf="loggined==false" class="nav-item"><a routerLink="login" class="nav-link active"><span
+                class="	fa fa-sign-in"></span> ເຂົ້າສູ່ລະບົບ</a></li>
+          <li *ngIf="loggined==true" class="nav-item text-white ">
+            <a class="nav-link active" [matMenuTriggerFor]="menu" id="iconbutton">
+              {{userAuth.user.firstname + ' ' + userAuth.user.lastname}} <span class="fa fa-arrow-down"></span>
+            </a>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                <span>ໂປຣໄຟຣ</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>password</mat-icon>
+                <span>ປ່ຽນລະຫັດຜ່ານ</span>
+              </button>
+              <mat-divider></mat-divider>
+              <button mat-menu-item (click)="logOut()">
+                <mat-icon>logout</mat-icon>
+                <span>ອອກຈາກລະບົບ</span>
+              </button>
+            </mat-menu>
+          </li>
+  
+        </ul>
       </div>
     </div>
   </nav>
+</div>

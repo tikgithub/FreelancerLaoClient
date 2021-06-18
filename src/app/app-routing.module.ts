@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layout/default/default.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { HelpComponent } from './pages/help/help.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PostajobComponent } from './pages/postajob/postajob.component';
@@ -12,8 +14,10 @@ const routes: Routes = [
     {path:'register', component:RegisterComponent},
     {path:'login\:email', component:LoginComponent},
     {path:'login',component: LoginComponent},
-    {path:'', component: HomeComponent, canActivate:[AuthGuardService]},
-    {path:'postajob', component: PostajobComponent, canActivate:[AuthGuardService]}
+    {path:'', component: HomeComponent},
+    {path:'postajob', component: PostajobComponent, canActivate:[AuthGuardService]},
+    {path:"aboutus", component: AboutusComponent},
+    {path:"help", component: HelpComponent}
   ]}
 ];
 

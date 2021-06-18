@@ -20,6 +20,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { JwtInterceptorService } from './services/jwt-interceptor.service';
 import { PostajobComponent } from './pages/postajob/postajob.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { HelpComponent } from './pages/help/help.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { ProfileComponent } from './pages/profile/profile.component';
+import {MatDividerModule} from '@angular/material/divider'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,10 @@ import { PostajobComponent } from './pages/postajob/postajob.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    PostajobComponent
+    PostajobComponent,
+    AboutusComponent,
+    HelpComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +50,9 @@ import { PostajobComponent } from './pages/postajob/postajob.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatDividerModule
   ],
   providers:
     [

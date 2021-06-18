@@ -10,13 +10,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private testAPI: TestAPIService) { }
   ngOnInit(): void {
-    this.test();
+    
   }
-
-  test(){
-     this.testAPI.testAPI().subscribe((data: any)=>{
-        console.log(data);
-    });
-  }
-
 }

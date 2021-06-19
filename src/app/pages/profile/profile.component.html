@@ -5,28 +5,28 @@
             <div class="row">
                 <div class="col-3 text-center">
                     <img id="profile-photo" class="image-fluid" src="assets/images/user.jpeg" width="200" height="auto"><br>
-                    <button mat-raised-button id="btnChangePic">ປ່ຽນຮູບ <mat-icon>photo_camera_front</mat-icon></button>
+                    <button mat-raised-button id="btnChangePic" (click)="openUploadDialog()">ປ່ຽນຮູບ <mat-icon>photo_camera_front</mat-icon></button>
                 </div>
                 <div class="col-9">
                     <p style="font-size: 15pt; font-weight: bold;">ຂໍ້ມູນຜູ້ໃຊ້</p>
                     <hr>
-                    <form>
+                    <form [formGroup]="profileForm">
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="firstname">ຊື່</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" formControlName="firstname">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="lastname">ນາມສະກຸນ</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" formControlName="lastname">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-2">
                                 <label for="sex">ເພດ</label>
-                                <select class="form-control">
+                                <select class="form-control" formControlName="sex">
                                     <option *ngFor="let g of genderData" value="{{g.id}}">{{g.gender}}</option>
                                 </select>
                             </div>
@@ -34,19 +34,19 @@
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="tel">ເບີໂທ</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" formControlName="tel">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-4">
                                 <label for="email">ອີເມວ</label>
-                                <input type="email" class="form-control">
+                                <input type="email" class="form-control" formControlName="email">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12">
                                 <label for="address">ທີ່ຢູ່</label>
-                                <textarea  id="" rows="5" class="form-control"></textarea>
+                                <textarea  id="" rows="5" class="form-control" formControlName="address"></textarea>
                             </div>
                         </div>
 

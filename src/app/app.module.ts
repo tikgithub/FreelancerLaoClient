@@ -25,7 +25,10 @@ import { HelpComponent } from './pages/help/help.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {MatDividerModule} from '@angular/material/divider';
-import { ChangepasswordComponent } from './pages/changepassword/changepassword.component'
+import { ChangepasswordComponent } from './pages/changepassword/changepassword.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ProfileuploadComponent } from './dialogs/profileupload/profileupload.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { ChangepasswordComponent } from './pages/changepassword/changepassword.c
     AboutusComponent,
     HelpComponent,
     ProfileComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    ProfileuploadComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import { ChangepasswordComponent } from './pages/changepassword/changepassword.c
     MatInputModule,
     MatButtonModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    ImageCropperModule
   ],
   providers:
     [

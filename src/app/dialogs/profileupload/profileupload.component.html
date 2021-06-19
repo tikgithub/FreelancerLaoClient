@@ -1,0 +1,14 @@
+<p id="title">ເລືອກຮູບ Profile</p>
+<div class="form-row">
+    <div class="form-group col-12">
+        <input type="file" class="form-control" (change)="fileChangeEvent($event)">
+
+    </div>
+</div>
+<image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 4" format="png"
+    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"></image-cropper>
+<div class="text-center">
+
+    <button mat-raised-button style="margin-top: 10px;"><mat-icon>cloud_upload</mat-icon> ຕົກລົງ</button>
+</div>

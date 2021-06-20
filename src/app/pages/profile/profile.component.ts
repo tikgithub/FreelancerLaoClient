@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ProfileuploadComponent } from 'src/app/dialogs/profileupload/profileupload.component';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { GenderAPIService } from 'src/app/services/gender-api.service';
+import { UserapiService } from 'src/app/services/userapi.service';
 
 @Component({
   selector: 'app-profile',
@@ -29,7 +30,8 @@ export class ProfileComponent implements OnInit {
   constructor(private authService: AuthenticationService,
     private genderService: GenderAPIService,
     private formBuild: FormBuilder,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private userApi: UserapiService) { }
 
   async ngOnInit() {
     this.getCurrentUser();
